@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env python
 # File mover 
 #
 '''
@@ -23,7 +23,7 @@ print ("[",DIR,"]")
 for file in glob.iglob(DIR):
     print(file)
     ftime = datetime.datetime.fromtimestamp(os.stat(file).st_mtime)
-    dirname = ftime.strftime("%m-%d")
+    dirname = ftime.strftime("%Y-%m-%d")
     if os.path.isdir(dirname) == False:
         os.mkdir(dirname)
     print('move', dirname,'/',file)
